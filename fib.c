@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
    char *fileName = argv[3];
 
    FILE * fibonacciFile = fopen(fileName, "r");
-   fscanf_s(fibonacciFile, "%u", &secondHalfOfN);
+   fscanf(fibonacciFile, "%u", &secondHalfOfN);
    fclose(fibonacciFile);
 
    int finalN = firstHalfOfN + secondHalfOfN;
@@ -27,8 +27,11 @@ int main(int argc, char *argv[]) {
          previousNum = currentNum;
          currentNum = sumOfFibonacci;
       }
+      printf("%d", sumOfFibonacci);
       return sumOfFibonacci;
    } else { // recursive
-      return fibonacciRecursive(finalN);
+      int sumOfFibonacci = fibonacciRecursive(finalN);
+      printf("%d", sumOfFibonacci);
+      return sumOfFibonacci;
    }
 }

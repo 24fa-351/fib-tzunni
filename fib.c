@@ -9,13 +9,14 @@ int fibonacciRecursive(int recursionValue) {
 
 int main(int argc, char *argv[]) {
    int firstHalfOfN = *argv[1];
-   int secondHalfOfN;
+   int secondHalfOfN = 0;
    char methodOfAddition = *argv[2];
    char *fileName = argv[3];
 
    FILE * fibonacciFile = fopen(fileName, "r");
-   fscanf(fibonacciFile, "%u", &secondHalfOfN);
-   
+   fscanf_s(fibonacciFile, "%u", &secondHalfOfN);
+   fclose(fibonacciFile);
+
    int finalN = firstHalfOfN + secondHalfOfN;
    if (methodOfAddition == 'i') { // iterative
       int sumOfFibonacci = 0;

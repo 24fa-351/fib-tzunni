@@ -29,7 +29,7 @@ int fibonacciRecursive(int recursionValue)
 
 int main(int argc, char *argv[])
 {
-  if (argc == 4)
+  if (argc != 4)
   {
     printf("Usage: ./fib n i|f filename\n");
     return -1;

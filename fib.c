@@ -22,6 +22,7 @@ int fibonacciRecursive(int recursionValue) {
 }
 
 int main(int argc, char *argv[]) {
+   if (argc != 4) return -1;
    int firstHalfOfN = *argv[1] - '0'; // account for ascii from command line
    int secondHalfOfN = 0;
    char methodOfAddition = *argv[2];
